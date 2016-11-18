@@ -1,0 +1,7 @@
+{
+  "Handler": "index.handler",
+  "MemorySize": 128,
+  "Role": "arn:aws:iam::654843952338:role/Lambda-Execution-Role",
+  "Timeout": 10,
+  "Runtime": "nodejs4.3"
+}
