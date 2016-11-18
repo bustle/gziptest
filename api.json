@@ -1,54 +1,74 @@
 {
-  "swagger" : "2.0",
-  "info" : {
-    "version" : "2016-11-18T04:35:06Z",
-    "title" : "gziptest"
+  "swagger": "2.0",
+  "info": {
+    "version": "2016-11-18T04:35:06Z",
+    "title": "gziptest"
   },
   "host" : "rpheaieb13.execute-api.us-east-1.amazonaws.com",
   "basePath" : "/production",
-  "schemes" : [ "https" ],
-  "paths" : {
-    "/lambda" : {
-      "get" : {
-        "responses" : {
-          "200" : {
-            "description" : "200 response",
-            "headers" : {
-              "Content-Encoding" : {
-                "type" : "string"
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/lambda": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "headers": {
+              "Content-Encoding": {
+                "type": "string"
+              },
+              "Content-Type": {
+                "type": "string"
               }
             }
           }
         },
-        "x-amazon-apigateway-integration" : {
-          "uri" : "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:654843952338:function:gziptest-lambda/invocations",
-          "responses" : {
-            "default" : {
-              "statusCode" : "200",
-              "responseParameters" : {
-                "method.response.header.Content-Encoding" : "'gzip'"
+        "x-amazon-apigateway-integration": {
+          "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:654843952338:function:gziptest-lambda/invocations",
+          "responses": {
+            "default": {
+              "statusCode": "200",
+              "responseParameters": {
+                "method.response.header.Content-Type": "'text/html'",
+                "method.response.header.Content-Encoding": "'gzip'"
               }
             }
           },
-          "passthroughBehavior" : "when_no_match",
-          "httpMethod" : "POST",
-          "contentHandling" : "CONVERT_TO_TEXT",
-          "type" : "aws"
+          "passthroughBehavior": "when_no_match",
+          "httpMethod": "POST",
+          "contentHandling": "CONVERT_TO_TEXT",
+          "type": "aws"
         }
       }
     },
-    "/lambda-proxy" : {
-      "get" : {
-        "responses" : { },
-        "x-amazon-apigateway-integration" : {
-          "uri" : "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:654843952338:function:gziptest-lambda-proxy/invocations",
-          "passthroughBehavior" : "when_no_match",
-          "httpMethod" : "POST",
-          "contentHandling" : "CONVERT_TO_BINARY",
-          "type" : "aws_proxy"
+    "/lambda-proxy": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "headers": {
+              "Content-Encoding": {
+                "type": "string"
+              },
+              "Content-Type": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "x-amazon-apigateway-integration": {
+          "uri": "arn:aws:apigateway:us-east-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-east-1:654843952338:function:gziptest-lambda-proxy/invocations",
+          "passthroughBehavior": "when_no_match",
+          "httpMethod": "POST",
+          "contentHandling": "CONVERT_TO_BINARY",
+          "type": "aws_proxy"
         }
       }
     }
   },
-  "x-amazon-apigateway-binary-media-types" : [ "text/html" ]
+  "x-amazon-apigateway-binary-media-types": [
+    "text/html"
+  ]
 }
