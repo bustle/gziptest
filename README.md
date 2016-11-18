@@ -3,7 +3,7 @@
 
 
 1. Replace `shep.accountId` in package.json
-2. Make `shep.apiId` blank string
+2. Make `shep.apiId` in package.json a blank string
 3. `npm install -g shep`
 4. `npm install`
 5. `shep deploy production`
