@@ -10,6 +10,7 @@ exports.handler = (event, context, callback) => {
         headers: {
             'Content-Type': 'text/html',
             'Content-Encoding': 'gzip',
-        }
+        },
+        isBase64Encoded: true
     });
 };
