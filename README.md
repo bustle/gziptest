@@ -1,9 +1,8 @@
 # gziptest
 
 
-
-1. Replace `shep.accountId` in package.json
-2. Make `shep.apiId` in package.json a blank string
+1. Replace `shep.accountId` in package.json with your AWS account ID
+2. Replace `shep.apiId` in package.json with a blank string
 3. `npm install -g shep`
 4. `npm install`
 5. `shep deploy production`
